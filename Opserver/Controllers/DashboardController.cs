@@ -15,7 +15,7 @@ namespace StackExchange.Opserver.Controllers
     {
         public override ISecurableModule SettingsModule => Current.Settings.Dashboard;
 
-        public override TopTab TopTab => new TopTab("Dashboard", nameof(Dashboard), this, 0);
+        public override TopTab TopTab => new TopTab("仪表板", nameof(Dashboard), this, 0);
 
         [Route("dashboard")]
         public ActionResult Dashboard(string q)

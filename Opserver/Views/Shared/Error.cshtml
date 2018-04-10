@@ -1,6 +1,6 @@
 ﻿@using StackExchange.Opserver.Controllers
 @{
-    this.SetPageTitle("Error");
+    this.SetPageTitle("错误");
 }
 <div class="row">
     <div class="col-md-6 col-md-offset-3 text-center" style="margin-top: 100px">
@@ -8,11 +8,11 @@
             <i class="fa fa-exclamation-triangle text-danger" aria-hidden="true"></i> Oh no, an error!
         </h1>
         <p>
-            I'm so sorry, an error occured doing the thing in the place.
+            我很抱歉，出现了错误。
         </p>
         @if (Current.User.IsGlobalAdmin)
         {
-            <p>You can check <a href="~/admin/errors">the error log</a> for details.</p>
+            <p>您可以查看 <a href="~/admin/errors">错误日志</a> 来检查错误详情.</p>
         }
     </div>
 </div>

@@ -17,7 +17,7 @@ namespace StackExchange.Opserver.Controllers
     {
         public override ISecurableModule SettingsModule => Current.Settings.SQL;
 
-        public override TopTab TopTab => new TopTab("SQL", nameof(Servers), this, 10)
+        public override TopTab TopTab => new TopTab("数据库", nameof(Servers), this, 10)
         {
             GetMonitorStatus = () => SQLModule.AllInstances.GetWorstStatus()
         };

@@ -28,16 +28,16 @@ var props = i.ServerProperties.SafeData(true);
                         </th>
                     </tr>
                     <tr>
-                        <th>Node</th>
-                        <th>State</th>
+                        <th>节点</th>
+                        <th>状态</th>
                         <th>CPU</th>
                         <th class="text-muted">(Last Hour)</th>
-                        <th>Memory</th>
-                        <th>Availability</th>
-                        <th>Databases</th>
+                        <th>内存</th>
+                        <th>可用性</th>
+                        <th>数据库</th>
                         <th title="Connections / Sessions">Conns <span class="text-muted">/ Sess</span></th>
-                        <th>Batches<span class="text-muted">/sec</span></th>
-                        <th>Last Commit</th>
+                        <th>批处理<span class="text-muted">/秒</span></th>
+                        <th>最后提交</th>
                         <th title="Quorum Votes in the Cluster">Votes</th>
                         <th>As of</th>
                     </tr>
@@ -72,19 +72,19 @@ var props = i.ServerProperties.SafeData(true);
                 <tr class="category-row">
                     <th colspan="8">
                         <h5>
-                            @standalone.GetWorstStatus().IconSpan() @standalone.Count.ToComma() Standalone
+                            @standalone.GetWorstStatus().IconSpan() @standalone.Count.ToComma() 单独实例
                             <span class="pull-right small"> @Helpers.PollNow(standalone)</span>
                         </h5>
                     </th>
                 </tr>
                 <tr>
-                    <th>Node</th>
+                    <th>节点</th>
                     <th>CPU</th>
                     <th class="text-muted">(Last Hour)</th>
-                    <th>Memory</th>
-                    <th>Databases</th>
+                    <th>内存</th>
+                    <th>数据库</th>
                     <th title="Connections / Sessions">Conns <span class="text-muted">/ Sess</span></th>
-                    <th>Batches<span class="text-muted">/sec</span></th>
+                    <th>批处理<span class="text-muted">/秒</span></th>
                     <th>As of</th>
                 </tr>
             </tbody>

@@ -5,7 +5,7 @@
     var groups = nodes.GroupBy(n => n.Category).OrderBy(g => g.Key.Index).ToList();
 }
 <div class="panel panel-default">
-    <div class="panel-heading">@nodes.GetWorstStatus().IconSpan() @nodes.Count.Pluralize("Node")</div>
+    <div class="panel-heading">@nodes.GetWorstStatus().IconSpan() @nodes.Count.Pluralize("节点")</div>
     <div class="panel-body">
         @*<div class="col-xs-4">
             @Gauges.Circle("Node", nodes)
@@ -13,9 +13,9 @@
         <table class="table table-super-condensed table-striped col-md-12">
             <tbody>
                 <tr>
-                    <th>Group</th>
-                    <th>Nodes</th>
-                    <th>Network</th>
+                    <th>分组</th>
+                    <th>节点</th>
+                    <th>网络</th>
                 </tr>
                 @foreach (var g in groups)
                 {
@@ -28,7 +28,7 @@
             </tbody>
             <tfoot>
                 <tr class="total-row">
-                    <td><strong>Total</strong></td>
+                    <td><strong>总计</strong></td>
                     <td>@Helpers.HealthDescription(nodes)</td>
                     <td>@nodes.Sum(n => n.TotalPrimaryNetworkbps < 0 ? 0 : n.TotalPrimaryNetworkbps).ToSpeed()</td>
                 </tr>

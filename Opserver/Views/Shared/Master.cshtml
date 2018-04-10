@@ -11,7 +11,6 @@
     <title>@Html.Raw((string)ViewData[ViewDataKeys.PageTitle])</title>
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="google" value="notranslate" />
     <link rel="stylesheet" href="@HtmlUtils.CacheBreaker("~/Content/themes/" + Theme.Current + "/styles.min.css")">
     <link href="@HtmlUtils.CacheBreaker("~/Content/img/apple-touch-icon.png")" rel="apple-touch-icon"/>
     <script src="@HtmlUtils.CacheBreaker("~/Content/js/jquery-1.11.3.min.js")"></script>
@@ -51,7 +50,7 @@
                 {
                     <form action="@topNodes.Url" method="GET" class="navbar-form navbar-left" role="search">
                         <div class="form-group-sm">
-                            <input type="text" class="form-control js-filter" placeholder="Search@(topNodes.SearchText.HasValue() ? " " + topNodes.SearchText : "")..." value="@topNodes.SearchValue" name="@topNodes.QueryParam" />
+                            <input type="text" class="form-control js-filter" placeholder="查询@(topNodes.SearchText.HasValue() ? " " + topNodes.SearchText : "")..." value="@topNodes.SearchValue" name="@topNodes.QueryParam" />
                         </div>
                         @if (topNodes.SearchParams != null)
                         {

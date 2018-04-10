@@ -17,7 +17,7 @@ namespace StackExchange.Opserver.Controllers
     {
         public override ISecurableModule SettingsModule => Current.Settings.Exceptions;
 
-        public override TopTab TopTab => new TopTab("Exceptions", nameof(Exceptions), this, 50)
+        public override TopTab TopTab => new TopTab("异常", nameof(Exceptions), this, 50)
         {
             GetMonitorStatus = () => ExceptionsModule.MonitorStatus,
             GetBadgeCount = () => ExceptionsModule.TotalExceptionCount,

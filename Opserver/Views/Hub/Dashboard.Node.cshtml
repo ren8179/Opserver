@@ -17,7 +17,7 @@
 {
     if (!DashboardModule.HasData)
     {
-        <div class="text-muted">No Data Available</div>
+        <div class="text-muted">无可用数据</div>
         return;
     }
     <img class="js-dashboard-spark" src="~/graph/@type.ToLower()/spark?id=@s.Id" alt="" data-id="@s.Id" data-type="@type" data-node="@s.PrettyName" />

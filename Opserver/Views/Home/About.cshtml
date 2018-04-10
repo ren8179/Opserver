@@ -5,7 +5,7 @@
 @using StackExchange.Opserver.Data.HAProxy
 @using StackExchange.Opserver.Data.SQL
 @{
-    this.SetPageTitle("About");
+    this.SetPageTitle("关于");
 
     var asm = Assembly.GetAssembly(typeof(GlobalApplication));
     var rev = asm.GetName().Version.ToString(4);
@@ -27,32 +27,32 @@
 <div class="row small">
     <div class="col-md-4">
         <div class="panel panel-default">
-            <div class="panel-heading">Info</div>
+            <div class="panel-heading">信息</div>
             <div class="panel-body small">
                 <div class="value-block col-xs-4">
                     @rev
-                    <label>App Version</label>
+                    <label>应用版本</label>
                 </div>
                 <div class="value-block col-xs-4">
                     @buildDate.ToRelativeTimeSpan()
-                    <label>Last Built</label>
+                    <label>最后发布</label>
                 </div>
                 <div class="value-block col-xs-4">
                     @GlobalApplication.StartDate.ToRelativeTimeSpan()
-                    <label>Uptime</label>
+                    <label>更新时间</label>
                 </div>
                 <div class="value-block col-xs-6">
                     @Environment.MachineName
-                    <label>Server</label>
+                    <label>服务器</label>
                 </div>
                 <div class="value-block col-xs-6">
                     Sync: @cacheStats.Item1.ToComma(), Async: @cacheStats.Item2.ToComma(), Errored: @cacheStats.Item3.ToComma()
-                    <label>Get-Set Cache</label>
+                    <label>缓存</label>
                 </div>
             </div>
         </div>
         <div class="panel panel-default">
-            <div class="panel-heading">Settings</div>
+            <div class="panel-heading">设置</div>
             <div class="panel-body small">
                 <div class="value-block col-xs-4">
                     <form method="POST" action="~/set-theme" class="form-group-sm">
@@ -63,7 +63,7 @@
                             }
                         </select>
                     </form>
-                    <label>Current Theme</label>
+                    <label>当前主题</label>
                 </div>
             </div>
         </div>
@@ -73,11 +73,11 @@
             });
         </script>
         <div class="panel panel-default">
-            <div class="panel-heading">Sections</div>
+            <div class="panel-heading">部件</div>
             <div class="panel-body">
-                @EnabledLabel("Dashboard", s.Dashboard.Enabled)
-                @EnabledLabel("Exceptions", s.Exceptions.Enabled)
-                @EnabledLabel("SQL", s.SQL.Enabled)
+                @EnabledLabel("仪表板", s.Dashboard.Enabled)
+                @EnabledLabel("异常", s.Exceptions.Enabled)
+                @EnabledLabel("数据库", s.SQL.Enabled)
                 @EnabledLabel("Redis", s.Redis.Enabled)
                 @EnabledLabel("Elastic", s.Elastic.Enabled)
                 @EnabledLabel("HAProxy", s.HAProxy.Enabled)
@@ -87,33 +87,33 @@
     </div>
     <div class="col-md-4">
         <div class="panel panel-default">
-            <div class="panel-heading">Polling</div>
+            <div class="panel-heading">轮询</div>
             <div class="panel-body small">
                 <div class="value-block col-xs-4 @(pollingInfo.BackgroundClass())">
                     @(pollingInfo.IsAlive ? "Alive" : "Dead")
-                    <label>Thread</label>
+                    <label>线程</label>
                 </div>
                 <div class="value-block col-xs-4">
                     @pollingInfo.StartTime.ToRelativeTimeSpan()
-                    <label>Started</label>
+                    <label>启动</label>
                 </div>
                 <div class="value-block col-xs-4">
                     @(pollingInfo.LastPollAll?.ToRelativeTimeSpan())
-                    <label>Last Poll</label>
+                    <label>最后轮询</label>
                 </div>
                 <div class="value-block col-xs-4">
                     @pollingInfo.TotalPollers.ToComma()
-                    <label>Pollers</label>
+                    <label>轮询次数</label>
                 </div>
                 <div class="value-block col-xs-4">
                     @pollingInfo.TotalPollIntervals.ToComma()
-                    <label>Poll Intervals</label>
+                    <label>轮询间隔</label>
                 </div>
                 <div class="value-block col-xs-4">
                     @pollingInfo.TotalPollers.ToComma()
-                    <label>Caches <span class="text-muted">(<a href="@Url.Action(nameof(HomeController.AboutCaches))">view</a>)</span></label>
+                    <label>缓存 <span class="text-muted">(<a href="@Url.Action(nameof(HomeController.AboutCaches))">view</a>)</span></label>
                 </div>
-                <h6 class="page-header">@pollingInfo.NodeCount.ToComma() Nodes</h6>
+                <h6 class="page-header">@pollingInfo.NodeCount.ToComma() 节点</h6>
                 <ul class="list-group">
                     @foreach (var ng in pollingInfo.NodeBreakdown)
                     {
@@ -128,23 +128,23 @@
     </div>
     <div class="col-md-4">
         <div class="panel panel-default">
-            <div class="panel-heading">Security</div>
+            <div class="panel-heading">安全性</div>
             <div class="panel-body small">
                 <div class="value-block col-xs-4 @((SecuritySettings.Current.Enabled ? MonitorStatus.Good : MonitorStatus.Warning).BackgroundClass())">
                     @(SecuritySettings.Current.Enabled ? "Enabled" : "Disabled")
-                    <label>Security</label>
+                    <label>安全性</label>
                 </div>
                 <div class="value-block col-xs-4">
                     @Current.User.AccountName
-                    <label>Current User</label>
+                    <label>当前用户</label>
                 </div>
                 <div class="value-block col-xs-4">
                     @Current.RequestIP
-                    <label>Request IP</label>
+                    <label>请求IP</label>
                 </div>
                 <ul class="list-group col-xs-12">
                     <li class="list-group-item">
-                        <span class="text-muted">Current Roles:</span>
+                        <span class="text-muted">当前角色:</span>
                         @if (Current.User.IsGlobalAdmin)
                         {
                             <strong class="text-success">Global Admin</strong>
@@ -156,7 +156,7 @@
                     </li>
                     <li class="list-group-item">
                         <span class="badge">@Current.Security.InternalNetworks.Count.ToComma()</span>
-                        <span class="text-muted">Internal Networks</span>
+                        <span class="text-muted">内部网络</span>
                     </li>
                     <li class="list-group-item">
                         <span class="text-muted">Admins:</span> @(SiteSettings.AdminGroups?.Replace(";", ", "))
@@ -172,7 +172,7 @@
         @if (s.Dashboard.Enabled)
         {
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+                <div class="panel-heading">仪表盘</div>
                 <div class="panel-body">
                     @foreach (var p in DashboardModule.Providers)
                     {
@@ -180,19 +180,19 @@
                         <ul class="list-group">
                             <li class="list-group-item">
                                 <span class="badge">@p.AllNodes.Count.ToComma()</span>
-                                Nodes
+                                节点
                             </li>
                             <li class="list-group-item">
                                 <span class="badge">@p.AllNodes.Sum(n => n.Interfaces?.Count).ToComma()</span>
-                                Interfaces
+                                接口
                             </li>
                             <li class="list-group-item">
                                 <span class="badge">@p.AllNodes.Sum(n => n.Volumes?.Count).ToComma()</span>
-                                Volumes
+                                卷
                             </li>
                             <li class="list-group-item">
                                 <span class="badge">@p.AllNodes.Sum(n => n.Apps?.Count).ToComma()</span>
-                                Applications
+                                应用
                             </li>
                         </ul>
                     }
@@ -227,9 +227,9 @@ sp_AskBrent: @features.HasSPAskBrent.ToString()
         var instances = SQLModule.StandaloneInstances;
         <div class="col-md-4">
             <div class="panel panel-default panel-@instances.GetWorstStatus().RawClass(showGood: true)">
-                <div class="panel-heading">SQL Instances</div>
+                <div class="panel-heading">数据库实例</div>
                 <div class="panel-body small">
-                    <h6 class="page-header">@clusters.Count.Pluralize("Availability Group Cluster")</h6>
+                    <h6 class="page-header">@clusters.Count.Pluralize("可用集群")</h6>
                     @foreach (var cluster in clusters)
                     {
                         <h6>@cluster.IconSpan() @cluster.Name</h6>
@@ -240,7 +240,7 @@ sp_AskBrent: @features.HasSPAskBrent.ToString()
                             }
                         </ul>
                     }
-                    <h6 class="page-header">@instances.Count.Pluralize("Standalone Node")</h6>
+                    <h6 class="page-header">@instances.Count.Pluralize("独立节点")</h6>
                     <ul class="list-group">
                         @foreach (var instance in instances)
                         {
@@ -256,7 +256,7 @@ sp_AskBrent: @features.HasSPAskBrent.ToString()
         var exceptionStatus = ExceptionsModule.MonitorStatus;
         <div class="col-md-4">
             <div class="panel panel-default panel-@exceptionStatus.RawClass(showGood: true)">
-                <div class="panel-heading">Exceptions</div>
+                <div class="panel-heading">异常</div>
                 <div class="panel-body small">
                     <ul class="list-group">
                         <li class="list-group-item">
@@ -269,19 +269,19 @@ sp_AskBrent: @features.HasSPAskBrent.ToString()
                         </li>
                         <li class="list-group-item">
                             <span class="badge@(s.Exceptions.EnablePreviews ? "" : " alert-warning")">@s.Exceptions.EnablePreviews</span>
-                            Previews
+                            预览
                         </li>
                         <li class="list-group-item">
                             <span class="badge">@s.Exceptions.RecentSeconds.Pluralize("Second")</span>
-                            Recent Threshold
+                            最近阈值
                         </li>
                         <li class="list-group-item">
                             <span class="badge alert-warning">@s.Exceptions.WarningCount.ToComma() / @s.Exceptions.WarningRecentCount.ToComma() Recent</span>
-                            Warning Thresholds
+                            警告阈值
                         </li>
                         <li class="list-group-item">
                             <span class="badge alert-danger">@s.Exceptions.CriticalCount.ToComma() / @s.Exceptions.CriticalRecentCount.ToComma() Recent</span>
-                            Critical Thresholds
+                            关键阈值
                         </li>
                     </ul>
                     @foreach (var store in s.Exceptions.Stores)
@@ -291,15 +291,15 @@ sp_AskBrent: @features.HasSPAskBrent.ToString()
                         <ul class="list-group">
                             <li class="list-group-item">
                                 <span class="badge">@(store.QueryTimeoutMs.ToComma())ms</span>
-                                Timeout
+                                超时
                             </li>
                             <li class="list-group-item">
                                 <span class="badge">@(store.PollIntervalSeconds.ToComma())s</span>
-                                Poll Interval
+                                轮询间隔
                             </li>
                             <li class="list-group-item">
                                 <span class="badge">@(es.Applications.Data?.Sum(a => a.ExceptionCount).ToComma() ?? "0")</span>
-                                Exception Count
+                                异常数量
                             </li>
                         </ul>
                     }

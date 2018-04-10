@@ -2,9 +2,9 @@
 @using StackExchange.Opserver.Views.Dashboard
 @model DashboardModel
 @{
-    this.SetPageTitle("Dashboard");
+    this.SetPageTitle("仪表板");
 
-    this.SetTopSearch("All Nodes",
+    this.SetTopSearch("所有节点",
               Model.Filter,
               Url.Action(nameof(DashboardController.Dashboard)));
 }

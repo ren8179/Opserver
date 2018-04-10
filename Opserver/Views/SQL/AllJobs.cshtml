@@ -8,7 +8,7 @@
                   .ToList();
 }
 <h5 class="page-header">
-    @(allJobs.Count.Pluralize("Job")) <span class="small">(@(allJobs.Count(j => j.Job.IsRunning).Pluralize("Running")))</span>
+    @(allJobs.Count.Pluralize("作业")) <span class="small">(@(allJobs.Count(j => j.Job.IsRunning).Pluralize("正在运行")))</span>
 </h5>
 <div class="js-refresh" data-name="sql-jobs">
 @if (allJobs.Count > 0)
@@ -17,16 +17,16 @@
         <thead>
             <tr>
                 <th></th>
-                <th>Server</th>
-                <th>Name</th>
-                <th>Last Run</th>
-                <th>Start</th>
-                <th>End</th>
-                <th>Duration</th>
-                <th>Enabled</th>
+                <th>服务</th>
+                <th>名称</th>
+                <th>最后执行结果</th>
+                <th>开始</th>
+                <th>结束</th>
+                <th>持续时间</th>
+                <th>是否启用</th>
                 @if (Current.IsInRole(Roles.SQLAdmin))
                 {
-                    <th>Actions</th>
+                    <th>操作</th>
                 }
             </tr>
         </thead>

@@ -13,7 +13,7 @@ namespace StackExchange.Opserver.Data.Dashboard
 
         public static DashboardCategory Unknown { get; } = new DashboardCategory(new DashboardSettings.Category
         {
-            Name = "Other Nodes",
+            Name = "其他节点",
             Pattern = ""
         })
         {

@@ -22,13 +22,13 @@
     </li>
 }
 <ul class="nav nav-tabs nav-tabs-right">
-    @TabLink(SQLViews.Servers, nameof(SQLController.Dashboard), "all servers", false)
-    @TabLink(SQLViews.Jobs, nameof(SQLController.AllJobs), "all jobs", false)
-    @TabLink(SQLViews.Instance, nameof(SQLController.Instance), "instance")
-    @TabLink(SQLViews.Top, nameof(SQLController.Top), "top")
-    @TabLink(SQLViews.Active, nameof(SQLController.Active), "active")
-    @TabLink(SQLViews.Connections, nameof(SQLController.Connections), "connections")
-    @TabLink(SQLViews.Databases, nameof(SQLController.Databases), "databases")
+    @TabLink(SQLViews.Servers, nameof(SQLController.Dashboard), "所有服务", false)
+    @TabLink(SQLViews.Jobs, nameof(SQLController.AllJobs), "所有作业", false)
+    @TabLink(SQLViews.Instance, nameof(SQLController.Instance), "实例")
+    @TabLink(SQLViews.Top, nameof(SQLController.Top), "常用")
+    @TabLink(SQLViews.Active, nameof(SQLController.Active), "活动")
+    @TabLink(SQLViews.Connections, nameof(SQLController.Connections), "连接")
+    @TabLink(SQLViews.Databases, nameof(SQLController.Databases), "数据库")
 </ul>
 <div>
     @if (Model.View != SQLViews.Servers && Model.View != SQLViews.Jobs && Model.CurrentInstance == null)

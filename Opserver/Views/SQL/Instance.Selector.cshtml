@@ -39,7 +39,7 @@
         </div>
     </div>
 }
-<h5 class="page-header">Please select a SQL instance.</h5>
+<h5 class="page-header">请选择一个数据库实例</h5>
 <div class="row">
     @foreach (var c in clusters)
     {
@@ -47,6 +47,6 @@
     }
     @if (standalone.Any())
     {
-        @RenderList(standalone, "Standalone")
+        @RenderList(standalone, "单独实例")
     }
 </div>

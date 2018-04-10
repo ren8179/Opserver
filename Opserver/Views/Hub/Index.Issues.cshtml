@@ -2,7 +2,7 @@
     var issues = Issue.GetAll().OrderByWorst().ToList();
 }
 <div class="panel panel-default">
-    <div class="panel-heading">@((issues.Count > 0 ? MonitorStatus.Warning : MonitorStatus.Good).IconSpan()) @issues.Count.Pluralize("Issue")</div>
+    <div class="panel-heading">@((issues.Count > 0 ? MonitorStatus.Warning : MonitorStatus.Good).IconSpan()) @issues.Count.Pluralize("Œ Ã‚")</div>
     <div class="panel-body">
         @foreach (var i in issues)
         {

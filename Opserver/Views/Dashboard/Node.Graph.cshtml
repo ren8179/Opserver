@@ -12,13 +12,13 @@
     if (Model.IsLive)
     {
         <h4 class="modal-title">
-            Live Stats for @Model.Node.PrettyName
+            实时统计 @Model.Node.PrettyName
         </h4>
         <div class="row small">
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        CPU Utilization
+                        CPU利用率
                     </div>
                     <div class="panel-body">
                         <div class="history-graph js-graph-cpu"></div>
@@ -27,7 +27,7 @@
             </div>
             <div class="col-md-6">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Memory Utilization <span cass="text-muted">(@(Model.Node.TotalMemory.GetValueOrDefault(0).ToSize()))</span></div>
+                    <div class="panel-heading">内存利用率 <span cass="text-muted">(@(Model.Node.TotalMemory.GetValueOrDefault(0).ToSize()))</span></div>
                     <div class="panel-body">
                         <div class="history-graph js-graph-memory"></div>
                     </div>
@@ -111,9 +111,9 @@
 else
 {
     <h4 class="modal-title">
-        Unknown node
+        未知节点
     </h4>
     <div class="alert alert-warning">
-        <h5>Node not found</h5>
+        <h5>没有节点</h5>
     </div>
 }

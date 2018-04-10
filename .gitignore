@@ -103,3 +103,4 @@ Opserver/config/*.json
 !Opserver/config/*.example.json
 Opserver/config/*.config
 *.StackOverflow.*
+/Opserver/Content/img/logo/logosmall2.png

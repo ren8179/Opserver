@@ -6,8 +6,8 @@
 @{
     var s = Model.CurrentNode;
 
-    this.SetPageTitle((s?.PrettyName ?? "Unknown Node") + " Status");
-    this.SetTopNodes(DashboardModule.AllNodes, "Dashboard", Model.CurrentNode);
+    this.SetPageTitle((s?.PrettyName ?? "未知节点") + " 状态");
+    this.SetTopNodes(DashboardModule.AllNodes, "仪表板", Model.CurrentNode);
 }
 @section head {
     <script>
@@ -19,7 +19,7 @@
 }
 @if (s == null)
 {
-    <div class="no-content">Node not found.</div>
+    <div class="no-content">没有节点</div>
     return;
 }
 <h5 class="page-header">
@@ -41,7 +41,7 @@
     <div class="col-md-4 col-sm-6">
         <div class="panel panel-default">
             <div class="panel-heading">
-                Info
+                信息
                 @if (s.Hardware != null)
                 {
                     <span class="text-muted">(<a href="#/dashboard/summary/hardware">view hardware</a>)</span>
@@ -57,20 +57,20 @@
                     else
                     {
                         @s.Manufacturer.IsNullOrEmptyReturn("Unknown")
-                        <label>Manufacturer</label>
+                        <label>厂家</label>
                     }
                 </div>
                 <div class="value-block small col-xs-6">
                     @s.Model.IsNullOrEmptyReturn("Unknown")
-                    <label>Model</label>
+                    <label>型号</label>
                 </div>
                 <div class="value-block small col-xs-6">
                     @s.ServiceTag.IsNullOrEmptyReturn("Unknown")
-                    <label>Serial</label>
+                    <label>序列号</label>
                 </div>
                 <div class="value-block small col-xs-6" title="@s.MachineType">
                     @s.MachineTypePretty.IsNullOrEmptyReturn("Unknown")
-                    <label>Type</label>
+                    <label>类型</label>
                 </div>
             </div>
         </div>
@@ -78,7 +78,7 @@
     <div class="col-md-4 col-sm-6">
         <div class="panel panel-default">
             <div class="panel-heading">
-                Stats
+                状态
                 @if (s.IsRealTimePollable)
                 {
                     //<span class="text-muted">(<a href="#/dashboard/graph/@s.Id.UrlEncode()/@NodeGraphModel.KnownTypes.Live" class="js-realtime-cpu">live</a>)</span>
@@ -97,12 +97,12 @@
                         <div class="progress-bar @s.MemoryMonitorStatus().ProgressBarClass()" style="width: @(s.PercentMemoryUsed?.ToString(CultureInfo.InvariantCulture))%;"></div>
                         <span>@s.PrettyMemoryUsed() / @s.PrettyTotalMemory()</span>
                     </div>
-                    <label>Memory</label>
+                    <label>内存</label>
                 </div>
                 <div class="value-block small col-xs-6" title="@s.NetworkTextSummary.Nullify()">
                     @s.PrettyTotalNetwork()
                     <label>
-                        Network
+                        网络
                         @{
                             var ips = s.IPs;
                             <span class="text-muted">(<a href="#/dashboard/summary/network">@(ips?.Any() ?? false ? ips.Count.Pluralize("IP") : "view" )</a>)</span>
@@ -118,16 +118,16 @@
                     }
                     else
                     {
-                        <span class="text-warning">Unknown</span>
+                        <span class="text-warning">未知</span>
                     }
-                    <label>Last Boot</label>
+                    <label>上次启动</label>
                 </div>
             </div>
         </div>
     </div>
     <div class="col-md-4 col-sm-6">
         <div class="panel panel-default">
-            <div class="panel-heading">Storage</div>
+            <div class="panel-heading">存储</div>
             <div class="panel-body">
                 @if (s.Volumes != null)
                 {

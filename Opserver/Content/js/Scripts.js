@@ -1572,7 +1572,7 @@ Status.HAProxy = (function () {
     };
 
     var chartFunctions = {
-        tooltipTimeFormat: d3.time.format.utc('%A, %b %d %H:%M')
+        tooltipTimeFormat: d3.time.format('%Y-%m-%d %H:%M')
     };
 
     var waveHtml = '<div class="sk-wave loader"><div></div><div></div><div></div><div></div><div></div></div>';
@@ -2162,11 +2162,10 @@ Status.HAProxy = (function () {
             function areaHover() {
                 // no data! what the hell are you trying to hover?
                 if (!dataLoaded) return;
-
                 var pos = d3.mouse(this),
                     date = x.invert(pos[0]),
                     bisector = d3.bisector(function(d) { return d.date; }).left,
-                    tooltip = '<div class="tooltip-date">' + chartFunctions.tooltipTimeFormat(date) + ' <span class="text-muted">UTC</span></div>',
+                    tooltip = '<div class="tooltip-date">' + chartFunctions.tooltipTimeFormat(date) + ' </div>',
                     data = options.ajaxZoom ? curData.points : curData.summary,
                     index = bisector(data, date, 1), // bisect the curData array to get the index of the hovered date
                     dateBefore = data[Math.max(index - 1, 0)], // get the date before the hover

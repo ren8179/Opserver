@@ -654,9 +654,9 @@ Select Top 100
                     switch (FileMaxSizePages)
                     {
                         case 0:
-                            return "At Max - No Growth";
+                            return "最大值 - 没有增长";
                         case -1:
-                            return "No Limit - Disk Capacity";
+                            return "无限制 - 磁盘容量";
                         case 268435456:
                             return "2 TB";
                         default:
@@ -708,15 +708,15 @@ Select mf.database_id DatabaseId,
                 switch (type)
                 {
                     case "FG":
-                        return "Filegroup";
+                        return "文件组";
                     case "PS":
-                        return "Partition Scheme";
+                        return "分区方案";
                     case "FD":
-                        return "FILESTREAM";
+                        return "文件流";
                     case null:
                         return "";
                     default:
-                        return "Unknown";
+                        return "未知";
                 }
             }
 

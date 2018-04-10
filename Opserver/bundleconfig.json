@@ -1,0 +1,14 @@
+[
+  {
+    "outputFileName": "Content/themes/dark/styles.min.css",
+    "inputFiles": [
+      "Content/themes/dark/styles.css"
+    ]
+  },
+  {
+    "outputFileName": "Content/themes/light/styles.min.css",
+    "inputFiles": [
+      "Content/themes/light/styles.css"
+    ]
+  }
+]
