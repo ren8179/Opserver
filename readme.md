@@ -12,6 +12,10 @@
 
 [Opserver 初探一《Opserver的搭建》](https://www.cnblogs.com/hobinly/p/6055125.html)
 
+[Opserver 初探二《exceptions配置》](http://www.cnblogs.com/hobinly/p/6069891.html)
+
+[Opserver 初探三《服务器数据监控》](http://www.cnblogs.com/hobinly/p/6074764.html)
+
 [Opserver开源的服务器监控系统(ASP.NET)](https://www.cnblogs.com/ibeisha/p/opserver.html)
 
 Opserver is a monitoring system by the team at [Stack Exchange](https://stackexchange.com), home of [Stack Overflow](https://stackoverflow.com).  It is a tool for monitoring:  
