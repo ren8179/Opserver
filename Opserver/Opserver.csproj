@@ -141,6 +141,7 @@
     <None Include="Config\ExceptionsSettings.json" />
     <None Include="Config\ExceptionsSettings.example.json" />
     <None Include="Config\HAProxySettings.example.json" />
+    <Content Include="Config\RedisSettings.json" />
     <None Include="Config\RedisSettings.example.json" />
     <Content Include="Config\SecuritySettings.config.example" />
     <None Include="Config\SecuritySettings.config">

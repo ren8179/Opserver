@@ -9898,22 +9898,20 @@ svg .stroke-muted.filled {
 /* Panel Layout Pages */
 .navbar {
   font-size: 12px;
-  min-height: 34px;
+  min-height: 50px;
 }
 .navbar > .container .navbar-brand,
 .navbar > .container-fluid .navbar-brand {
   padding: 0;
-  width: 140px;
-  height: 34px;
-  background: url("../../img/logo/full-dark.svg") no-repeat;
-  background-position: 2px 5px;
-  background-size: 131px 24px;
+  width: 155px;
+  height: 50px;
+  background: url("../../img/logo/logosmall2.png") no-repeat;
+  background-size: 100% 100%;
 }
 .navbar > .container .navbar-brand:hover,
 .navbar > .container-fluid .navbar-brand:hover {
-  background: #485563 url("../../img/logo/full-dark.svg") no-repeat;
-  background-position: 2px 5px;
-  background-size: 131px 24px;
+  background: #485563 url("../../img/logo/logosmall2.png") no-repeat;
+  background-size: 100% 100%;
 }
 .navbar .navbar-nav > li > a {
   padding-top: 8px;
@@ -9923,7 +9921,7 @@ svg .stroke-muted.filled {
   vertical-align: baseline;
 }
 .navbar .navbar-form {
-  margin-top: 5px;
+  margin-top: 14px;
   margin-bottom: 5px;
 }
 .nav-tabs {
@@ -9987,6 +9985,9 @@ svg .stroke-muted.filled {
 }
 .navbar-left > a.active:hover {
   text-decoration: none;
+}
+.navbar-right {
+  margin-top: 10px;
 }
 input.loading {
   background: #ffffff url("data:image/svg+xml;utf8,<svg width='32px' height='20px' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='xMidYMid'><g transform='translate(25 50)'><circle cx='0' cy='0' r='7' fill='#2fa6c4' transform='scale(0.00340694 0.00340694)'><animateTransform attributeName='transform' type='scale' begin='-0.3333333333333333s' calcMode='spline' keySplines='0.3 0 0.7 1;0.3 0 0.7 1' values='0;1;0' keyTimes='0;0.5;1' dur='1s' repeatCount='indefinite'></animateTransform></circle></g><g transform='translate(50 50)'><circle cx='0' cy='0' r='7' fill='#2fa6c4' transform='scale(0.31409 0.31409)'><animateTransform attributeName='transform' type='scale' begin='-0.16666666666666666s' calcMode='spline' keySplines='0.3 0 0.7 1;0.3 0 0.7 1' values='0;1;0' keyTimes='0;0.5;1' dur='1s' repeatCount='indefinite'></animateTransform></circle></g><g transform='translate(75 50)'><circle cx='0' cy='0' r='7' fill='#2fa6c4' transform='scale(0.774545 0.774545)'><animateTransform attributeName='transform' type='scale' begin='0s' calcMode='spline' keySplines='0.3 0 0.7 1;0.3 0 0.7 1' values='0;1;0' keyTimes='0;0.5;1' dur='1s' repeatCount='indefinite'></animateTransform></circle></g></svg>") right no-repeat;

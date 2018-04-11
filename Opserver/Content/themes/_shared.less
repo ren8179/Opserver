@@ -38,40 +38,39 @@
 @miniprofiler-top-margin: 34px;
 
 .navbar {
-  font-size: 12px;
-  min-height: 34px;
-  > .container, > .container-fluid {
-    .navbar-brand {
-      padding: 0;
-      width: 140px;
-      height: 34px;
-      background: url("../img/logo/full-dark.svg") no-repeat;
-      background-position: 2px 5px;
-      background-size: 131px 24px;
+    font-size: 12px;
+    min-height: 50px;
 
-      &:hover {
-        background: @navbar-default-link-active-bg url("../img/logo/full-dark.svg") no-repeat;
-        background-position: 2px 5px;
-        background-size: 131px 24px;
-      }
+    > .container, > .container-fluid {
+        .navbar-brand {
+            padding: 0;
+            width: 155px;
+            height: 50px;
+            background: url("../img/logo/logosmall2.png") no-repeat;
+            background-size: 100% 100%;
+
+            &:hover {
+                background: @navbar-default-link-active-bg url("../img/logo/logosmall2.png") no-repeat;
+                background-size: 100% 100%;
+            }
+        }
     }
-  }
 
-  .navbar-nav {
-    > li > a {
-      padding-top: 8px;
-      padding-bottom: 7px;
+    .navbar-nav {
+        > li > a {
+            padding-top: 8px;
+            padding-bottom: 7px;
 
-      .badge {
-        vertical-align: baseline;
-      }
+            .badge {
+                vertical-align: baseline;
+            }
+        }
     }
-  }
 
-  .navbar-form {
-    margin-top: 5px;
-    margin-bottom: 5px;
-  }
+    .navbar-form {
+        margin-top: 14px;
+        margin-bottom: 5px;
+    }
 }
 .nav-tabs {
     font-size: 12px;
@@ -141,6 +140,9 @@
       }
     }
   }
+}
+.navbar-right{
+    margin-top:10px;
 }
 
 input.loading {
