@@ -18,6 +18,10 @@
 
 [Opserver开源的服务器监控系统(ASP.NET)](https://www.cnblogs.com/ibeisha/p/opserver.html)
 
+踩过的坑：
+1、redis服务版本最好在3.x以上。对于2.x版本的redis服务，Opserver无法正确解析StackExchange.Redis获取的redisinfo。
+
+
 Opserver is a monitoring system by the team at [Stack Exchange](https://stackexchange.com), home of [Stack Overflow](https://stackoverflow.com).  It is a tool for monitoring:  
 * Servers/Switches & anything supported by Bosun, Orion, or direct WMI monitoring
 * SQL Clusters & Single Instances 
