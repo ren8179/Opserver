@@ -21,6 +21,7 @@
 ### 踩过的坑：
 
 * 1、redis服务版本最好在3.x以上。对于2.x版本的redis服务，Opserver无法正确解析StackExchange.Redis获取的redisinfo。
+如果你想监控2.x的版本，可以修改下RedisInfo.FromInfoString 方法。
 
 
 Opserver is a monitoring system by the team at [Stack Exchange](https://stackexchange.com), home of [Stack Overflow](https://stackoverflow.com).  It is a tool for monitoring:  
