@@ -25,7 +25,7 @@ namespace StackExchange.Opserver
         /// Semicolon delimited list of groups that can view the entire site, exceptions, HAProxy servers, etc.
         /// </summary>
         public static string ViewGroups => ConfigurationManager.AppSettings["ViewGroups"].IsNullOrEmptyReturn("");
-
+        
         private static ProfilingModes? _profilingMode;
         public static ProfilingModes ProfilingMode
         {

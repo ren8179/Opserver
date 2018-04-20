@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using Newtonsoft.Json;
 
 namespace StackExchange.Opserver.Data.Dashboard.Providers
 {
@@ -105,6 +106,7 @@ namespace StackExchange.Opserver.Data.Dashboard.Providers
 
         public override string NodeType => "WMI";
 
+        [JsonIgnore]
         public override IEnumerable<Cache> DataPollers => _wmiNodes.SelectMany(x => x.Caches);
 
         protected override IEnumerable<MonitorStatus> GetMonitorStatus()
@@ -116,6 +118,7 @@ namespace StackExchange.Opserver.Data.Dashboard.Providers
 
         public override bool HasData => DataPollers.Any(x => x.ContainsData);
 
+        [JsonIgnore]
         public override List<Node> AllNodes { get; } = new List<Node>();
     }
 }

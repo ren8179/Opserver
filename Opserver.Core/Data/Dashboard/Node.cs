@@ -4,6 +4,7 @@ using System.Linq;
 using StackExchange.Opserver.Data.Dashboard.Providers;
 using System.Globalization;
 using System.Text.RegularExpressions;
+using Newtonsoft.Json;
 
 namespace StackExchange.Opserver.Data.Dashboard
 {
@@ -61,6 +62,7 @@ namespace StackExchange.Opserver.Data.Dashboard
         public List<Node> VMs { get; internal set; }
 
         private DashboardCategory _category;
+        [JsonIgnore]
         public DashboardCategory Category =>
             _category ?? (_category = DashboardCategory.AllCategories.Find(c => c.PatternRegex.IsMatch(Name)) ?? DashboardCategory.Unknown);
         private string GetPrettyMachineType()

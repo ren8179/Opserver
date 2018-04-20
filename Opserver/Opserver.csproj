@@ -141,15 +141,17 @@
     <None Include="Config\ExceptionsSettings.json" />
     <None Include="Config\ExceptionsSettings.example.json" />
     <None Include="Config\HAProxySettings.example.json" />
-    <Content Include="Config\RedisSettings.json" />
+    <None Include="Config\RedisSettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Config\RedisSettings.example.json" />
     <Content Include="Config\SecuritySettings.config.example" />
     <None Include="Config\SecuritySettings.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <Content Include="Config\SQLSettings.json">
+    <None Include="Config\SQLSettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </None>
     <None Include="Config\SQLSettings.example.json" />
     <Content Include="Content\img\logo\logo.eps" />
     <None Include="Config\JiraSettings.example.json" />

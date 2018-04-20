@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
+using StackExchange.Opserver.Helpers;
 using StackExchange.Profiling;
 using StackExchange.Profiling.Internal;
 using StackExchange.Profiling.Storage;
@@ -18,7 +19,7 @@ namespace StackExchange.Opserver.Data
         public override bool ContainsData => _hasData == 1 && Data != null;
         private int _hasData;
         internal override object InnerCache => DataTask;
-        public override Type Type => typeof (T);
+        public override Type Type => typeof(T);
         private readonly SemaphoreSlim _pollSemaphoreSlim = new SemaphoreSlim(1);
 
         public override string InventoryDescription
@@ -149,6 +150,9 @@ namespace StackExchange.Opserver.Data
 
             _updateFunc = async () =>
             {
+                Data = RedisHelper.Get<T>(description + memberName);
+                if (Data != null)
+                    return Data;
                 var success = true;
                 PollStatus = "UpdateCacheItem";
                 if (EnableProfiling)
@@ -161,6 +165,7 @@ namespace StackExchange.Opserver.Data
                     try
                     {
                         PollStatus = "Fetching";
+                        
                         using (MiniProfiler.Current.Step("Data Fetch"))
                         {
                             var task = getData();
@@ -170,6 +175,7 @@ namespace StackExchange.Opserver.Data
                                 {
                                     // Re-await for throws.
                                     Data = await task;
+                                    RedisHelper.Set(description + memberName, Data);
                                 }
                                 else
                                 {
@@ -180,6 +186,7 @@ namespace StackExchange.Opserver.Data
                             else
                             {
                                 Data = await task;
+                                RedisHelper.Set(description + memberName, Data);
                             }
                         }
                         PollStatus = "Fetch Complete";
@@ -316,7 +323,7 @@ namespace StackExchange.Opserver.Data
         {
             get
             {
-                if (LastPoll == null ) return MonitorStatus.Unknown;
+                if (LastPoll == null) return MonitorStatus.Unknown;
                 return LastPollSuccessful ? MonitorStatus.Good : MonitorStatus.Critical;
             }
         }

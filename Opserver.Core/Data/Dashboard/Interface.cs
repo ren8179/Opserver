@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Newtonsoft.Json;
 
 namespace StackExchange.Opserver.Data.Dashboard
 {
     public partial class Interface : IMonitorStatus
     {
+        [JsonIgnore]
         public Node Node { get; set; }
 
         public string Id { get; internal set; }

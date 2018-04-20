@@ -598,7 +598,7 @@ SELECT Caption,
                         await q.GetFirstResultAsync().ConfigureAwait(false);
                     }
                 }
-                catch
+                catch(Exception ex)
                 {
                     return false;
                 }
